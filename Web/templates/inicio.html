@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inicio</title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/mediaquery.css' %}" />
+    <script src="https://kit.fontawesome.com/22f799e056.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <section id="cuenta">
+        <img id="fotoPerfil" src="{% static 'img/fotoPerfil.png' %}" />
+        <h3>PORTAFOLIO</h3>
+        {% if userLogged %}
+          <a href="{% url 'perfil' %}">{{ userName }}</a>
+        {% else %}
+          <a href="{% url 'login' %}">Iniciar Sesión</a>
+        {% endif %}
+      </section>
+      <section id="navegacion">
+        <div>
+          <a class="itemNav" href="#inicio"><i class="fa fa-home"></i><h4>Inicio</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="#acerca"><i class="fa fa-info"></i><h4>Acerca de</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="#resumen"><i class="fa fa-file"></i><h4>Resumen</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="{% url 'productos' %}"><i class="fa fa-book"></i><h4>Productos</h4></a>
+        </div>
+      </section>
+    </nav>
+    <header id="inicio" class="menu">
+      <h1>Juan José JV</h1>
+      <h2>Ingeniero Infórmatico En Formación</h2>
+    </header>
+    <main>
+      <div class="menu">
+        <section id="acerca">
+          <img id="fotoDeveloper" src="{% static 'img/developer.jpg' %}" />
+          <div>
+            <div>
+              <h3>Acerca de</h3>
+              <p>Soy un estudiante con una pasión y enfoque especializado en el desarrollo. Mi sólido conocimiento en el diseño, implementación y mantenimiento de sistemas me ha permitido destacarme en la creación de soluciones robustas y eficientes para diversas aplicaciones.</p>
+            </div>
+            <div id="infoAcerca">
+              <div>
+                <div id="itemAcerca">
+                  <i class="fa-solid fa-chevron-right"></i><strong>Correo:</strong>
+                  elzjuanjojv@gmail.com
+                </div>
+
+                <div id="itemAcerca">
+                  <i class="fa-solid fa-chevron-right"></i><strong>Télefono:</strong>
+                  +57 000 000 0000
+                </div>
+              </div>
+              <div>
+                <div id="itemAcerca">
+                  <i class="fa-solid fa-chevron-right"></i><strong>Ubicación:</strong>
+                  Colombia
+                </div>
+
+                <div id="itemAcerca">
+                  <i class="fa-solid fa-chevron-right"></i><strong>GitHub:</strong>
+                  ElzJuanjo
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="hechos">
+          <div>
+            <h3>Hechos</h3>
+            <p>He desarrollado diversos programas con diferentes conceptos de POO, Estructuras de datos, Funciones CRUD. Estos proyectos destacan mi capacidad para crear aplicaciones y adaptarme a nuevos conocimientos.</p>
+          </div>
+          <div id="contenidoHechos">
+            <div>
+              <div id="elementoHechos">
+                <i class="fa-regular fa-face-smile"></i>
+                <p id="cantidad">20</p>
+              </div>
+              <h5><strong>Clientes Satisfechos</strong></h5>
+            </div>
+            <div>
+              <div id="elementoHechos">
+                <i class="fa-regular fa-folder"></i>
+                <p id="cantidad">50</p>
+              </div>
+              <h5><strong>Proyectos Realizados</strong></h5>
+            </div>
+            <div>
+              <div id="elementoHechos">
+                <i class="fa-solid fa-headphones"></i>
+                <p id="cantidad">1</p>
+              </div>
+              <h5><strong>Año Asesorando</strong></h5>
+            </div>
+            <div>
+              <div id="elementoHechos">
+                <i class="fa-solid fa-user-group"></i>
+                <p id="cantidad">5</p>
+              </div>
+              <h5><strong>Colaboraciones Realizadas</strong></h5>
+            </div>
+          </div>
+        </section>
+        <section id="aptitudes">
+          <div>
+            <h3>Aptitudes</h3>
+            <p>Tengo un alto enfoque en cumplir con el objetivo, llevar a otro nivel la espectativa de mi trabajo y conocimiento en los siguientes lenguajes de programación.</p>
+          </div>
+          <div id="listaAptitudes">
+            <div id="barraPorcentaje">
+              <div class="aptitud" id="primerAptitud">JAVA - 80%</div>
+            </div>
+            <div id="barraPorcentaje">
+              <div class="aptitud" id="segundaAptitud">PYTHON - 70%</div>
+            </div>
+            <div id="barraPorcentaje">
+              <div class="aptitud" id="terceraAptitud">C++ - 60%</div>
+            </div>
+            <div id="barraPorcentaje">
+              <div class="aptitud" id="cuartaAptitud">JS - 50%</div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="menu">
+        <section id="resumen">
+          <div>
+            <h3>Resumen</h3>
+            <p>Historial académico excepcional, manteniendo un promedio superior a 4.0 en todos los semestres acumulados. Enamorado por la programación, he sido seleccionado para participar en convenios con empresas de renombre de mi universidad. Actualmente, brindo clases autónomas a compañeros de semestres inferiores en áreas como algoritmos, lo que demuestra mi interés con la excelencia y mi virtud para comunicar conceptos técnicos de manera efectiva.</p>
+          </div>
+          <div>
+            <div id="contenedorResumen">
+              <div id="estudios">
+                <div>
+                  <h4 id="tituloResumen">Universidad</h4>
+                  <div id="elementoResumen">
+                    <h4><strong>Jaime Isaza Cadavid</strong></h4>
+                    <h5>2022 - Presente</h5>
+                    <h5>Rionegro, Antioquia</h5>
+                    <ul>
+                      <li>Monitor en Base de Datos</li>
+                      <li>Monitor en Algoritmos</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <h4 id="tituloResumen">Bachillerato</h4>
+                  <div id="elementoResumen">
+                    <h4><strong>IE PIO XI</strong></h4>
+                    <h5>2019 - 2021</h5>
+                    <h5>La Unión, Antioquia</h5>
+                    <ul>
+                      <li>Graduado con mención de honor</li>
+                      <li>Notas sobresalientes</li>
+                      <li>Destacado en convivencia</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h4 id="tituloResumen">Trabajos</h4>
+                <div id="elementoResumen">
+                  <h4><strong>Developer Junior</strong></h4>
+                  <h5>2024 - Proximamente</h5>
+                  <h5>Medellin, Antioquia</h5>
+                  <ul>
+                    <li>Manejo de errores</li>
+                    <li>Presentación de soluciones</li>
+                    <li>Informe de datos</li>
+                  </ul>
+                  <h4><strong>Monitor Administrativo</strong></h4>
+                  <h5>Actualmente</h5>
+                  <h5>Rionegro, Antioquia</h5>
+                  <ul>
+                    <li>Prestación de servicio en biblioteca</li>
+                    <li>Colaboracion en laboratorio 3D</li>
+                    <li>Clases de Taller de lenguajes 1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="servicios">
+          <div>
+            <h3>Servicios</h3>
+            <p>Enfásis para trabajos en los siguientes campos.</p>
+          </div>
+          <div id="listaServicios">
+            <div id="colServicios">
+              <div id="service">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>
+                  <h5><strong>Backend</strong></h5>
+                  <p>Java y Python</p>
+                </div>
+              </div>
+              <div id="service">
+                <i class="fa-solid fa-binoculars"></i>
+                <div>
+                  <h5><strong>Testeador</strong></h5>
+                  <p>Principiante</p>
+                </div>
+              </div>
+            </div>
+            <div id="colServicios">
+              <div id="service">
+                <i class="fa-solid fa-table-list"></i>
+                <div>
+                  <h5><strong>Frontend</strong></h5>
+                  <p>Nivel Básico</p>
+                </div>
+              </div>
+              <div id="service">
+                <i class="fa-solid fa-gamepad"></i>
+                <div>
+                  <h5><strong>Videojuegos</strong></h5>
+                  <p>Aprendiz</p>
+                </div>
+              </div>
+            </div>
+            <div id="colServicios">
+              <div id="service">
+                <i class="fa-solid fa-chart-column"></i>
+                <div>
+                  <h5><strong>Bases de Datos</strong></h5>
+                  <p>Conocimiento Medio</p>
+                </div>
+              </div>
+              <div id="service">
+                <i class="fa-solid fa-box-open"></i>
+                <div>
+                  <h5><strong>Fullstack</strong></h5>
+                  <p>En Proceso</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <h5>© Copyright Juan José JV</h5>
+      <section id="redesSociales">
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

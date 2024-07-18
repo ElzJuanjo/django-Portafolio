@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+    <script src="https://kit.fontawesome.com/22f799e056.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <section id="cuenta">
+        <img id="fotoPerfil" src="{% static 'img/fotoPerfil.png' %}" />
+        <h3>PORTAFOLIO</h3>
+      </section>
+      <section id="navegacion">
+        <div>
+          <a class="itemNav" href="/#inicio"><i class="fa fa-home"></i><h4>Inicio</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#acerca"><i class="fa fa-info"></i><h4>Acerca de</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#resumen"><i class="fa fa-file"></i><h4>Resumen</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="{% url 'productos' %}"><i class="fa fa-book"></i><h4>Productos</h4></a>
+        </div>
+      </section>
+    </nav>
+    <header id="encabezado">
+      <h3>Login</h3>
+      <h5><a href="/">Inicio</a> / Login</h5>
+    </header>
+    <main id="pagCuenta">
+      <div id="contenedorFormulario">
+        <form method="post">
+          {% csrf_token %}
+          <div class="filaForm">
+            <div class="inputForm">
+              <p>Usuario</p>
+              <input type="text" name="user" required />
+            </div>
+          </div>
+          <div class="filaForm">
+            <div class="inputForm">
+              <p>Contraseña</p>
+              <input type="password" name="password" required />
+            </div>
+          </div>
+          <div class="enviarForm">
+            <p class="cargando">Validando datos...</p>
+            <p class="error">{{ error }}</p>
+            <p class="exito">¡Ha ingresado con éxito!</p>
+            <button type="submit">Iniciar Sesión</button>
+          </div>
+        </form>
+        <div style="display: flex; align-items: center; flex-direction: column;">
+          <p>¿Aún no tienes una cuenta? ¡Puedes registrarte ahora mismo!</p>
+          <a href="{% url 'registro' %}" style="margin-top:25px"><button type="submit">Registro</button></a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h5>© Copyright Juan José JV</h5>
+      <section id="redesSociales">
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/subMain.js' %}"></script>
+  </body>
+</html>

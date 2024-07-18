@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Productos</title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+    <script src="https://kit.fontawesome.com/22f799e056.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <section id="cuenta">
+        <img id="fotoPerfil" src="{% static 'img/fotoPerfil.png' %}" />
+        <h3>PORTAFOLIO</h3>
+        {% if userLogged %}
+          <a href="{% url 'perfil' %}">{{ userName }}</a>
+        {% else %}
+          <a href="{% url 'login' %}">Iniciar Sesión</a>
+        {% endif %}
+      </section>
+      <section id="navegacion">
+        <div>
+          <a class="itemNav" href="/#inicio"><i class="fa fa-home"></i><h4>Inicio</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#acerca"><i class="fa fa-info"></i><h4>Acerca de</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#resumen"><i class="fa fa-file"></i><h4>Resumen</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" id="navProductos" href="{% url 'productos' %}"><i class="fa fa-book"></i><h4>Productos</h4></a>
+        </div>
+      </section>
+    </nav>
+    <header id="encabezado">
+      <h3>Productos</h3>
+      <h5><a href="/">Inicio</a> / Productos</h5>
+    </header>
+    <main id="portafolio">
+      <div>
+        <p>Gracias por visitar mi recopilación. Aquí puedes conocer los proyectos en los que he trabajado y cómo mi enfoque estratégico y habilidades técnicas han agregado valor a mis clientes.</p>
+        <div id="centrarMenuP">
+          <div id="menuPortafolio">
+            <h5 id="filtroPortafolio">ALL</h5>
+            <h5 id="filtroPortafolio">APP</h5>
+            <h5 id="filtroPortafolio">CLASS</h5>
+            <h5 id="filtroPortafolio">WEB</h5>
+          </div>
+        </div>
+      </div>
+      <div id="contenedorP">
+        <div id="imagenesP">
+          <a href="{% url 'detalles' idProducto=1 %}"><img class="app" src="{% static 'img/portafolio/app1.jpg' %}" /></a>
+          <a href="{% url 'detalles' idProducto=2 %}"><img class="clases" src="{% static 'img/portafolio/class1.png' %}" /></a>
+          <a href="{% url 'detalles' idProducto=3 %}"><img class="web" src="{% static 'img/portafolio/web1.png' %}" /></a>
+        </div>
+        <div id="imagenesP">
+          <a href="{% url 'detalles' idProducto=4 %}"><img class="app" src="{% static 'img/portafolio/app2.jpg' %}" /></a>
+          <a href="{% url 'detalles' idProducto=5 %}"><img class="clases" src="{% static 'img/portafolio/class2.jpg' %}" /></a>
+          <a href="{% url 'detalles' idProducto=6 %}"><img class="web" src="{% static 'img/portafolio/web2.png' %}" /></a>
+        </div>
+        <div id="imagenesP">
+          <a href="{% url 'detalles' idProducto=7 %}"><img class="app" src="{% static 'img/portafolio/app3.png' %}" /></a>
+          <a href="{% url 'detalles' idProducto=8 %}"><img class="clases" src="{% static 'img/portafolio/class3.jpg' %}" /></a>
+          <a href="{% url 'detalles' idProducto=9 %}"><img class="web" src="{% static 'img/portafolio/web3.png' %}" /></a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h5>© Copyright Juan José JV</h5>
+      <section id="redesSociales">
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/portfolio.js' %}"></script>
+  </body>
+</html>

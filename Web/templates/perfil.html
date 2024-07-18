@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Perfil</title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/22f799e056.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <section id="cuenta">
+        <img id="fotoPerfil" src="{% static 'img/fotoPerfil.png' %}" />
+        <h3>PORTAFOLIO</h3>
+      </section>
+      <section id="navegacion">
+        <div>
+          <a class="itemNav" href="/#inicio"><i class="fa fa-home"></i><h4>Inicio</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#acerca"><i class="fa fa-info"></i><h4>Acerca de</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#resumen"><i class="fa fa-file"></i><h4>Resumen</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="{% url 'productos' %}"><i class="fa fa-book"></i><h4>Productos</h4></a>
+        </div>
+      </section>
+    </nav>
+    <header id="encabezado">
+      <h3>Perfil</h3>
+      <h5><a href="/">Inicio</a> / Perfil</h5>
+    </header>
+    <main id="pagCuenta">
+      <div id="contenedorFormulario">
+        <form method="post">
+          {% csrf_token %}
+          <div class="filaForm">
+            <div class="inputForm">
+              <p>
+                <strong>NOMBRE:</strong> {{ nombre }}
+              </p>
+              <input type="text" name="newname" placeholder="Nuevo Nombre" />
+            </div>
+            <div class="filaForm">
+              <div class="inputForm">
+                <p>
+                  <strong>APELLIDO:</strong> {{ apellido }}
+                </p>
+                <input type="text" name="newlastname" placeholder="Nuevo Apellido" />
+              </div>
+            </div>
+          </div>
+          <div class="filaForm">
+            <div class="inputForm">
+              <p>
+                <strong>EMAIL:</strong> {{ email }}
+              </p>
+              <input type="email" name="newemail" placeholder="Nuevo Email" />
+            </div>
+            <div class="filaForm">
+              <div class="inputForm">
+                <p>
+                  <strong>USUARIO:</strong> {{ user }}
+                </p>
+                <input type="text" name="newuser" placeholder="Nuevo Usuario" />
+              </div>
+            </div>
+          </div>
+          <div class="filaForm">
+            <div class="inputForm">
+              <p>
+                <strong>CONTRASEÑA ACTUAL</strong>
+              </p>
+              <input type="password" name="password" required />
+            </div>
+            <div class="filaForm">
+              <div class="inputForm">
+                <p>
+                  <strong>CONTRASEÑA NUEVA</strong>
+                </p>
+                <input type="password" name="password2" />
+              </div>
+            </div>
+          </div>
+          <div class="enviarForm">
+            <p class="cargando">Validando datos...</p>
+            <p class="error">{{ error }}</p>
+            <p class="exito">¡Se han guardado los cambios!</p>
+            <button type="submit">Guardar Cambios</button>
+          </div>
+        </form>
+        <div style="display: flex; align-items: center; flex-direction: column;">
+          <a href="{% url 'cerrarSesion' %}" style="margin-top:25px"><button type="submit">Cerrar Sesión</button></a>
+          <form action="/eliminarCuenta/" style="margin-top:25px" class="eliminarCuenta">
+            <button type="submit" class="botonEliminar">Eliminar Cuenta</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <h5>© Copyright Juan José JV</h5>
+      <section id="redesSociales">
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/subMain.js' %}"></script>
+  </body>
+</html>

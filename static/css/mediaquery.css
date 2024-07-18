@@ -1,0 +1,94 @@
+@media (max-width:830px) or (max-height:570px) {
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+    #cuenta {
+        position: relative;
+        top: 0%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #fotoPerfil {
+        width: 40px;
+        border: 4px solid var(--azulMedioOscuro);
+    }
+
+    #inicio {
+        left: auto;
+        width: auto;
+    }
+
+    main {
+        width: auto;
+        left: auto;
+        bottom: 10vh;
+    }
+
+    footer {
+        position: relative;
+        width: auto;
+        height: auto;
+        bottom: 10vh;
+    }
+
+    #navegacion {
+        position: fixed;
+        bottom: 0%;
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 10vh;
+        z-index: 1;
+        background: #071522;
+    }
+
+    .itemNav {
+        flex-direction: column;
+    }
+
+    .itemNav i,
+    h4 {
+        margin: 5px 10px;
+        font-size: 15px;
+    }
+
+    #acerca {
+        flex-direction: column;
+    }
+
+    #fotoDeveloper {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #contenidoHechos {
+        flex-direction: column;
+    }
+
+    #contenedorP {
+        display: block;
+    }
+
+    #imagenesP {
+        flex-direction: column;
+    }
+
+    #listaServicios {
+        flex-direction: column;
+    }
+
+    #colServicios {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #service {
+        flex-direction: column;
+    }
+}

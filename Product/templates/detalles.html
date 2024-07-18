@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalles</title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pages.css' %}" />
+    <script src="https://kit.fontawesome.com/22f799e056.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav>
+      <section id="cuenta">
+        <img id="fotoPerfil" src="{% static 'img/fotoPerfil.png' %}" />
+        <h3>PORTAFOLIO</h3>
+        {% if userLogged %}
+          <a href="{% url 'perfil' %}">{{ userName }}</a>
+        {% else %}
+          <a href="{% url 'login' %}">Iniciar Sesión</a>
+        {% endif %}
+      </section>
+      <section id="navegacion">
+        <div>
+          <a class="itemNav" href="/#inicio"><i class="fa fa-home"></i><h4>Inicio</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#acerca"><i class="fa fa-info"></i><h4>Acerca de</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="/#resumen"><i class="fa fa-file"></i><h4>Resumen</h4></a>
+        </div>
+        <div>
+          <a class="itemNav" href="{% url 'productos' %}"><i class="fa fa-book"></i><h4>Productos</h4></a>
+        </div>
+      </section>
+    </nav>
+    <header id="encabezado">
+      <h3>Detalles</h3>
+      <h5><a href="/">Inicio</a> / Detalles</h5>
+    </header>
+    <main>
+      <section id="pagDetalles">
+        <div id="filaDetalles">
+          <div id="contenedorDetalles">
+            <img src="{% static 'img/detalles/detalle1.jpg' %}" />
+            <img src="{% static 'img/detalles/detalle2.jpg' %}" />
+            <img src="{% static 'img/detalles/detalle3.jpg' %}" />
+          </div>
+          <div id="cuadroDetalles">
+            <h4>{{ nombre }}</h4>
+            <hr />
+            <p>
+              <strong>Categoria:</strong> {{ categoria }}
+            </p>
+            <p>
+              <strong>Cliente:</strong> {{ cliente }}
+            </p>
+            <p>
+              <strong>Fecha:</strong> {{ fecha }}
+            </p>
+            <p>
+              <strong>URL:</strong> <a>{{ url }}</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3>INFORMACIÓN DEL PRODUCTO</h3>
+          <p>{{ desc }}</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <h5>© Copyright Juan José JV</h5>
+      <section id="redesSociales">
+        <a href="#"><i class="fa fa-whatsapp"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      </section>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/subMain.js' %}"></script>
+  </body>
+</html>

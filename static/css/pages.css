@@ -1,0 +1,77 @@
+@media (max-width:830px) or (max-height:570px) {
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+    #cuenta {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #fotoPerfil {
+        width: 40px;
+        border: 4px solid var(--azulMedioOscuro);
+    }
+
+    #navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .itemNav {
+        flex-direction: column;
+    }
+
+    .itemNav i,
+    h4 {
+        margin: 5px 10px;
+        font-size: 15px;
+    }
+
+    #encabezado {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+
+    main {
+        position: static;
+        width: auto;
+    }
+
+    #pagCuenta {
+        height: auto;
+    }
+
+    footer {
+        position: static;
+        height: auto;
+        width: auto;
+    }
+
+    #contenedorFormulario {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    #pagDetalles {
+        height: auto;
+    }
+
+    #filaDetalles {
+        flex-direction: column;
+    }
+
+    #contenedorDetalles {
+        width: 90vw;
+        margin-bottom: 20px;
+    }
+
+    #portafolio {
+        width: auto;
+        min-height: auto;
+    }
+}
