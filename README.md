@@ -1,6 +1,6 @@
 # VISTA PREVIA
 
-![Imagen de vista previa](vista_previa.png)
+![vista_previa](https://github.com/user-attachments/assets/170a75ad-1a12-46fc-911e-3334ccc0d42d)
 
 **EJECUCIÓN:** `python3 manage.py runserver`
 
